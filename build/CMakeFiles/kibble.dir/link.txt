@@ -1,0 +1,1 @@
+/usr/bin/cc     CMakeFiles/kibble.dir/kibble/main.c.o  -o kibble -rdynamic 

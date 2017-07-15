@@ -1,0 +1,3 @@
+/home/ethan/Desktop/kibble/build/CMakeFiles/edit_cache.dir
+/home/ethan/Desktop/kibble/build/CMakeFiles/rebuild_cache.dir
+/home/ethan/Desktop/kibble/build/CMakeFiles/kibble.dir

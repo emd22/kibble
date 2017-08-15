@@ -4,14 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/ethan/Desktop/kibble/src/kibble/lexer.c" "/home/ethan/Desktop/kibble/build/CMakeFiles/kibble.dir/kibble/lexer.c.o"
-  "/home/ethan/Desktop/kibble/src/kibble/main.c" "/home/ethan/Desktop/kibble/build/CMakeFiles/kibble.dir/kibble/main.c.o"
+  "/home/ethan/Desktop/kibble/src/kibble/lexer.c" "/home/ethan/Desktop/kibble/build/CMakeFiles/ace.dir/kibble/lexer.c.o"
+  "/home/ethan/Desktop/kibble/src/kibble/main.c" "/home/ethan/Desktop/kibble/build/CMakeFiles/ace.dir/kibble/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
-  "/home/ethan/Desktop/kibble/src/../include/kibble"
   )
 
 # Targets to which this target links.

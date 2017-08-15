@@ -6,25 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/ethan/Desktop/kibble/src/../include/kibble/lexer.h
-
 /home/ethan/Desktop/kibble/src/kibble/lexer.c
-lexer.h
--
-string.h
--
-stdio.h
--
-stdlib.h
--
-stdbool.h
--
 
 /home/ethan/Desktop/kibble/src/kibble/main.c
 stdio.h
--
-stdlib.h
--
-lexer.h
 -
 

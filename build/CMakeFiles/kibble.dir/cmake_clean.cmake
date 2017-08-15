@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/kibble.dir/kibble/main.c.o"
+  "CMakeFiles/kibble.dir/kibble/lexer.c.o"
   "kibble.pdb"
   "kibble"
 )

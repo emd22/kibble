@@ -123,6 +123,33 @@ kibble/fast:
 	$(MAKE) -f CMakeFiles/kibble.dir/build.make CMakeFiles/kibble.dir/build
 .PHONY : kibble/fast
 
+kibble/lexer.o: kibble/lexer.c.o
+
+.PHONY : kibble/lexer.o
+
+# target to build an object file
+kibble/lexer.c.o:
+	$(MAKE) -f CMakeFiles/kibble.dir/build.make CMakeFiles/kibble.dir/kibble/lexer.c.o
+.PHONY : kibble/lexer.c.o
+
+kibble/lexer.i: kibble/lexer.c.i
+
+.PHONY : kibble/lexer.i
+
+# target to preprocess a source file
+kibble/lexer.c.i:
+	$(MAKE) -f CMakeFiles/kibble.dir/build.make CMakeFiles/kibble.dir/kibble/lexer.c.i
+.PHONY : kibble/lexer.c.i
+
+kibble/lexer.s: kibble/lexer.c.s
+
+.PHONY : kibble/lexer.s
+
+# target to generate assembly for a file
+kibble/lexer.c.s:
+	$(MAKE) -f CMakeFiles/kibble.dir/build.make CMakeFiles/kibble.dir/kibble/lexer.c.s
+.PHONY : kibble/lexer.c.s
+
 kibble/main.o: kibble/main.c.o
 
 .PHONY : kibble/main.o
@@ -159,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... kibble"
+	@echo "... kibble/lexer.o"
+	@echo "... kibble/lexer.i"
+	@echo "... kibble/lexer.s"
 	@echo "... kibble/main.o"
 	@echo "... kibble/main.i"
 	@echo "... kibble/main.s"

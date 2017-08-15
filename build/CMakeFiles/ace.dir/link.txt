@@ -1,0 +1,1 @@
+/usr/bin/cc     CMakeFiles/ace.dir/kibble/main.c.o CMakeFiles/ace.dir/kibble/lexer.c.o  -o ace 

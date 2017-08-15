@@ -1,8 +1,24 @@
-cmake_minimum_required(VERSION 2.6.0)
+cmake_minimum_required(VERSION 3.5)
 
-project(kibble C)
+file (GLOB_RECURSE SOURCES "*.c")
+file (GLOB_RECURSE HEADERS "../include/kibble/*.h")
 
-file(GLOB autopilot_sources ./*.cpp ./*/*.cpp ./*/*/*.cpp ./*/*/*/*.cpp ./*.c ./*/*.c ./*/*/*.c ./*/*/*/*.c)
-SET(autopilot ${autopilot_sources})  
+SET(GCC_COVERAGE_COMPILE_FLAGS "-g")
 
-add_executable(kibble ${autopilot})
+foreach(f IN LISTS SOURCES)
+  get_filename_component(b ${f} NAME)
+  set_source_files_properties(${f} PROPERTIES
+    COMPILE_DEFINITIONS "__FILENAME__=${b}")
+endforeach()
+foreach(f IN LISTS HEADERS)
+  get_filename_component(b ${f} NAME)
+  set_source_files_properties(${f} PROPERTIES
+    COMPILE_DEFINITIONS "__FILENAME__=${b}")
+endforeach()
+
+include_directories(
+  ${CMAKE_CURRENT_LIST_DIR}/../include/kibble
+)
+add_definitions(${GCC_COVERAGE_COMPILE_FLAGS})
+
+add_executable(kibble ${SOURCES} ${HEADERS})

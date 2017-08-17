@@ -7,6 +7,7 @@
 
 #define P(s,n) printf("DEBUG: %s : %d\n", s, n)
 
+#define MAP_TOKENS(in,new) int i=0;int l=strlen(new);for(;i<l;i++)in[i]=new[i];
 
 typedef struct {
     int fsize;
@@ -38,14 +39,29 @@ void debug(char **tokens, int tok_len) {
 int lexer_read(char *input, char **tokens) {
     int token_index = 0;
     int token_str_index = 0;
-    int index;
+    int index, i;
     int max_index = strlen(input);
     bool should_push_token = false;
+
+    char *split_chars[] = {".", "!", ","};
+    int split_chars_len = 3;
+    char temp[2] = {'\0', '\0'};
 
     bool is_white;
 
     for (index = 0; index < max_index; index++) {
+        temp[0] = input[index];
         is_white = is_whitespace(input[index]);
+        for (i = 0; i < split_chars_len; i++) {
+            if (input[index] == split_chars[i][0]) {
+                printf("splitting char %s\n", split_chars[i]);
+                should_push_token = false;
+                //tokens[++token_index][0] = split_chars[i];
+                MAP_TOKENS(tokens[++token_index], split_chars[i]);
+                token_str_index = 0;        
+                break;
+            }
+        }
         if (is_white && should_push_token) {
             should_push_token = false;
             token_index++;
@@ -87,7 +103,6 @@ int read_file(char *filename, info_t *info) {
     info->buf[sz] = '\0';
 
     nread = fread(info->buf, 1, sz, fp);
-    P("Done allocation.",0);    
 
     info->fsize = sz;
 
@@ -102,7 +117,6 @@ void run_lang(char *filename) {
     int i;
     read_file(filename, &info);
     int token_amt = info.fsize;
-    P("tok amt", token_amt);
     info.tokens = (char **)malloc(token_amt * sizeof(char*));
     for (i = 0; i < token_amt; i++) {
         info.tokens[i] = (char *)malloc(32); //tokens have maximum length of 32 bytes.
